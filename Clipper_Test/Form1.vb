@@ -91,7 +91,7 @@ Public Class frmMain
         'do the offset
         Dim co As New ClipperOffset()
         co.AddPath(column.Poly, JoinType.jtRound, EndType.etClosedPolygon)
-        co.Execute(offsetPolygon, offset * zoom)
+        co.Execute(offsetPolygon, offset)
         DrawPolygon(offsetPolygon, Color.FromArgb(0, 0, &HFF, 0), Color.FromArgb(&HFF, 0, 0, 0))
         Dim c As New Clipper()
         c.AddPath(slab.Poly, PolyType.ptSubject, True)
@@ -193,6 +193,12 @@ Public Class frmMain
         slab.height = txtSh.Text
         trbY.Minimum = -txtSh.Text / 2 + column.height / 2
         trbY.Maximum = txtSh.Text / 2 - column.height / 2
+        Draw()
+    End Sub
+
+    Private Sub txtCoffset_TextChanged(sender As Object, e As EventArgs) Handles txtCoffset.TextChanged
+        On Error Resume Next
+        offset = txtCoffset.Text
         Draw()
     End Sub
 End Class

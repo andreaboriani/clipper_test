@@ -1,5 +1,5 @@
 # clipper_test
-Today I was looking for a library for Boolean and offsetting operations on polygons and I stumbled upon this little library called Clipper by
+Today I was looking for a library for Boolean and offsetting operations on polygons and I stumbled upon this little library called [Clipper](http://www.angusj.com/delphi/clipper.php) by
 Angus Johnson.
 
 It is distributed in source form in various languages including C# and is freeware both for opensource and commercial applications.
